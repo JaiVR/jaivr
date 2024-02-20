@@ -6,7 +6,7 @@
   padding: 6rem;
   min-height: 100vh;
   font-family: "Poppins";
-  background: url("/public/bgjai.gif");
+  background-color: #1E1E1E;
 
   div.fixedBt{
     position: absolute;
@@ -85,30 +85,4 @@
       }
     }
   }
-}
-div.card{
-  border: 1px solid #012b35;
-  border-radius: 8px;
-  padding: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  animation: glow 2s infinite alternate;
-  margin: auto;
-
-  div.cardimg:hover{
-    transform: scale(1.2);
-    transition: 3s ease-in;
-  }
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 0px #012b35;
-  }
-  100% {
-    box-shadow: 0 0 20px #00ccff;
-  }
-}
-div.routerDiv{
-    margin: auto;
 }

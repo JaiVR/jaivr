@@ -8,6 +8,7 @@ import '@fontsource/poppins';
 import { Toolbar } from 'primereact/toolbar';
 import { Avatar } from 'primereact/avatar';
 import Link from "next/link";
+import Navbar from "../../components/navbar/navbar";
 
 export default function Home() {
   const router = useRouter();
@@ -49,16 +50,7 @@ export default function Home() {
           <p>experience</p>
         </div>
       </div> */}
-      <div className={styles.card} style={{display:"flex", gap:"5rem"}}>
-          <div style={{display:"flex", gap:"1rem"}}>
-            <Image src="jai.svg" height={48} width={48} alt="" style={{borderRadius:"50%"}}></Image>
-            <h1>Jai</h1>
-          </div>
-          <div style={{marginTop:"auto", marginBottom:"auto", display:"flex", gap:"2rem"}}>
-            <div className={styles.cardimg}><Link href="/projects"><Image src="projects.svg" height={32} width={32} alt="" style={{cursor:"pointer"}}></Image></Link></div>
-            <div className={styles.cardimg}><Link href="/experience"><Image src="experience.svg" height={32} width={32} alt="" style={{cursor:"pointer"}}></Image></Link></div>
-          </div>
-      </div>
+          <Navbar/>
     </main>
   );
 }

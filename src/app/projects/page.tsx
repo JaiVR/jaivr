@@ -2,7 +2,6 @@
 import Image from "next/image";
 import styles from "./projects.module.scss";
 import Link from "next/link";
-import { Carousel } from 'primereact/carousel';
 import React, { useState } from "react";
 
 interface project {
@@ -53,10 +52,9 @@ function Project({ projectData }: { projectData: project }) {
   style={{
     backgroundImage: `url(${projectData.url})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    transition: "background-image 0.5s ease", // Smooth transition effect
+    transition: "background-image 0.5s ease",
   }}
   onMouseEnter={(e) => {
     e.currentTarget.style.backgroundImage = `url(${projectData.urlop})`;
@@ -77,33 +75,8 @@ function Project({ projectData }: { projectData: project }) {
 }
 
 export default function Projects() {
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-
-  const projectTemplate = (project: project) => (
-    <Project projectData={project} />
-  );
-  const customNextIcon = (
-<Image src="rightsmallrrow.svg" height={32} width={32} alt='oo' style={{marginTop:"auto",marginBottom:"auto",transform:"rotate(-270deg)", border:"3px solid #01c4ef ", borderRadius:"50%", padding:"5px"}}></Image>
-  );
-
-  const customPrevIcon = (
-    <Image src="rightsmallrrow.svg" height={32} width={32} alt='oo' style={{marginTop:"auto",marginBottom:"auto",transform:"rotate(-90deg)", border:"3px solid #01c4ef ", borderRadius:"50%", padding:"5px"}}></Image>
-  );
-
-
-  const [x,setX] =useState<number>(3000)
-  const handleMouseEnter = () => {
-    setX(10000000000000)
-  };
-
-  const handleMouseLeave = () => {
-    setX(3000);
-  };
-
   return (
-    <main className={styles.main} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <main className={styles.main}>
       <div className={styles.headers}>
         <Link href="/">
           <div className={styles.back}>
@@ -122,18 +95,9 @@ export default function Projects() {
         </div>
       </div>
       <section className={styles.content}>
-        <Carousel
-          value={data}
-          itemTemplate={projectTemplate}
-          numVisible={1}
-          numScroll={1}
-          responsiveOptions={[]}
-          circular
-          autoplayInterval={x}
-          orientation="vertical" verticalViewPortHeight="90vh"
-          nextIcon={customNextIcon}
-      prevIcon={customPrevIcon}
-        />
+     {data?.map((projectData, index: number) => (
+      <Project projectData={projectData}/>
+    ))}
       </section>
     </main>
   );

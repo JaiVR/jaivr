@@ -1,0 +1,40 @@
+div.card{
+    border: 0.5px solid #ffffff;
+    border-radius: 64px;
+    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    animation: glow 2s infinite alternate;
+    margin-top: auto;
+    h1{
+      font-size: 1.5rem;
+      margin: auto;
+    }
+    div.cardimg{
+        color: #727272;
+    }
+    div.cardimg:hover{
+        color: white;
+      }
+    div.cardbox{
+        border: 1px solid white;
+        padding: 1rem;
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 0px #ffffff;
+    }
+    100% {
+      box-shadow: 0 0 10px #ffffff;
+    }
+  }
+
+  @media screen and (max-width:340px) {
+    div.card{
+        h1{
+            font-size: 20px;
+        }
+    }
+  }
