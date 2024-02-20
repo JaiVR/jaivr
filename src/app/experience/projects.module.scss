@@ -1,0 +1,31 @@
+.main {
+    padding: 2rem;
+    div.headers {
+      div.back {
+        background-color: #01c4ef;
+        border-radius: 50%;
+        width: max-content;
+        height: 8vh;
+        div.img {
+          padding: 1rem;
+        }
+      }
+      div.projects {
+        writing-mode:sideways-lr;
+        h2{
+            font-size: 2.5rem;
+            padding-top:2vh;
+        }
+    }
+    }
+    .name{
+        font-size: 1.5rem;
+        color: #01c4ef;
+    }
+    .card{
+        span.cardDiv{
+            border: 1px solid #01c4ef;
+        }
+    }
+  }
+  

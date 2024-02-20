@@ -1,0 +1,219 @@
+.main {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+
+  .headers {
+    padding-top: 1rem;
+    .back {
+      background-color: #01c4ef;
+      border-radius: 50%;
+      width: max-content;
+      height: 8vh;
+
+      .img {
+        padding: 1rem;
+      }
+    }
+
+    .projects {
+      transform: rotate(-90deg);
+      position: absolute;
+      left: -5vh;
+      top: 20vh;
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .content {
+    padding: 1rem;
+    margin: auto;
+    width: auto;
+
+    .project {
+      gap: 4rem;
+      height: 89vh;
+      margin: auto;
+      width: 150vh;
+      div.projectinner {
+        display: flex;
+        margin: auto;
+        a {
+          padding: 0;
+          margin: 0;
+          font-size: 7vh;
+          color: #01c4ef;
+          font-weight: 600;
+          margin: auto;
+        }
+      }
+
+      .name {
+        display: flex;
+        gap: 0.5rem;
+        cursor: pointer;
+        opacity: 0;
+        a {
+          font-size: 7vh;
+          color: #01c4ef;
+          font-weight: 600;
+        }
+      }
+
+      .details {
+        p {
+          font-size: 1rem;
+        }
+
+        .link {
+          background-color: #01c4ef;
+          color: #ffff;
+          width: 200px;
+          padding: 1rem;
+          cursor: pointer;
+          margin-top: 1vh;
+          border-radius: 12px;
+        }
+      }
+    }
+    .project:hover {
+      .name {
+        opacity: 1;
+        transition: 0.3s ease-in;
+        display: flex;
+        justify-content: center;
+      }
+      .name:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+      }
+      a {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+
+.mian::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.main {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@media only screen and (max-width: 480px) {
+    .main {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: flex;
+      
+        .headers {
+          padding-top: 1rem;
+          .back {
+            background-color: #01c4ef;
+            border-radius: 50%;
+            width: max-content;
+            height: 8vh;
+      
+            .img {
+              padding: 1rem;
+            }
+          }
+      
+          .projects {
+            transform: rotate(-90deg);
+            position: absolute;
+            left: -5vh;
+            top: 20vh;
+            h2 {
+              font-size: 3rem;
+            }
+          }
+        }
+      
+        .content {
+          padding: 1rem;
+          margin: auto;
+          width: auto;
+      
+          .project {
+            gap: 4rem;
+            height: 89vh;
+            margin: auto;
+            background-size: cover;
+            div.projectinner {
+              display: flex;
+              margin: auto;
+              a {
+                padding: 0;
+                margin: 0;
+                font-size: 7vh;
+                color: #01c4ef;
+                font-weight: 600;
+                margin: auto;
+              }
+            }
+      
+            .name {
+              display: flex;
+              gap: 0.5rem;
+              cursor: pointer;
+              opacity: 0;
+              a {
+                font-size: 7vh;
+                color: #01c4ef;
+                font-weight: 600;
+              }
+            }
+      
+            .details {
+              p {
+                font-size: 1rem;
+              }
+      
+              .link {
+                background-color: #01c4ef;
+                color: #ffff;
+                width: 200px;
+                padding: 1rem;
+                cursor: pointer;
+                margin-top: 1vh;
+                border-radius: 12px;
+              }
+            }
+          }
+          .project:hover {
+            .name {
+              opacity: 1;
+              transition: 0.3s ease-in;
+              display: flex;
+              justify-content: center;
+            }
+            .name:hover {
+              transform: scale(1.2);
+              transition: transform 0.3s ease;
+            }
+            a {
+              margin-top: auto;
+              margin-bottom: auto;
+            }
+          }
+        }
+      }
+      
+      .mian::-webkit-scrollbar {
+        display: none;
+      }
+      
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .main {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+  }
