@@ -1,108 +1,135 @@
 .main {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  display: flex;
-  background-color: #1e1e1e;
-
-  .headers {
-    padding-top: 1rem;
-    .back {
-      background-color: #727272;
-      border-radius: 50%;
-      width: max-content;
-      height: 8vh;
-
-      .img {
-        padding: 1rem;
-      }
-    }
-
-    .projects {
-      transform: rotate(-90deg);
-      position: absolute;
-      left: -5vh;
-      top: 20vh;
-      h2 {
-        font-size: 3rem;
-      }
-    }
-  }
-
-  .content {
-    padding: 1rem;
-    margin: auto;
-    width: auto;
-    height: 100vh;
-    .project {
-      gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+    font-family: "Poppins";
+    background-color: #272727;
+  
+    div.nameDiv {
       margin: auto;
-      background-color: #1e1e1e;
-      div.projectinner {
-        display: flex;
-        margin: auto;
-        a {
-          padding: 0;
-          margin: 0;
-          font-size: 7vh;
-          color: #01c4ef;
-          font-weight: 600;
-          margin: auto;
-        }
+      h3 {
+        font-size: 3.1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
       }
-
-      .name {
-        display: flex;
-        gap: 0.5rem;
-        cursor: pointer;
-        opacity: 0;
-        a {
-          font-size: 7vh;
-          color: #01c4ef;
-          font-weight: 600;
-        }
-      }
-
-      .details {
-        p {
-          font-size: 1rem;
-        }
-
-        .link {
-          background-color: #01c4ef;
-          color: #ffff;
-          width: 200px;
-          padding: 1rem;
-          cursor: pointer;
-          margin-top: 1vh;
-          border-radius: 12px;
-        }
+      h3 strong {
+        color: #01d1ff;
+        font-size: 3.1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        // background: linear-gradient(90deg, #0095ff, #01e1ff, #01ffcc);
+        // background-clip: text;
+        // -webkit-background-clip: text;
+        // background-clip: text;
+        // color: transparent;
       }
     }
-    .project:hover {
-      .name {
-        opacity: 1;
-        transition: 0.3s ease-in;
+    div.routerDiv {
+      div.command1 {
         display: flex;
-        justify-content: center;
+        gap: 1rem;
+        p {
+          font-size: 1.5rem;
+          margin: 0;
+          padding: 0;
+          font-weight: 500;
+        }
+        h4 {
+          font-size: 1.5rem;
+          margin: 0;
+          padding: 0;
+          color: #01d1ff;
+          font-weight: 500;
+        }
+        strong {
+          font-size: 1.5rem;
+          margin: 0;
+          padding: 0;
+          color: #01d1ff;
+          font-weight: 500;
+        }
       }
-      .name:hover {
-        transform: scale(1.2);
-        transition: transform 0.3s ease;
-      }
-      a {
-        margin-top: auto;
-        margin-bottom: auto;
+      div.command2 {
+        display: flex;
+        gap: 1rem;
+        margin-left: 1.3vh;
+        p {
+          font-size: 1.5rem;
+          margin: 0;
+          padding: 0;
+          font-weight: 500;
+        }
+        h4 {
+          font-size: 1.5rem;
+          margin: 0;
+          padding: 0;
+          color: #01d1ff;
+          font-weight: 500;
+        }
+        strong {
+          font-size: 1.5rem;
+          margin: 0;
+          padding: 0;
+          color: #01d1ff;
+          font-weight: 500;
+        }
       }
     }
   }
-}
-
-.mian::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.main {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+  div.content {
+    background-color: #1e1e1e;
+    width: 60vw;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px #292929;
+  }
+  div.socials {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  
+    div.socialBox {
+      padding: 4px;
+      padding-top: 4px;
+      padding-bottom: 0;
+      border-radius: 8px;
+      .fadeText {
+        margin: auto;
+      }
+    }
+    div.socialBox:hover {
+      border: 1px solid #292929;
+      width: 168px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    div.socials {
+      display: grid;
+      grid-template-columns: 1fr;
+      div.socialBox {
+        border: 1px solid #292929;
+        width: 140px;
+      }
+    }
+    div.content{
+      width: 75vw;
+      h1{
+        font-size: 1.5rem;
+      }
+      h2{
+        font-size: 1rem;
+      }
+      p,a{
+        font-size: 0.75rem;
+      }
+    }
+  }
+  

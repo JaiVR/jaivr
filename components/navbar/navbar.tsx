@@ -8,8 +8,19 @@ import "@fontsource/poppins";
 import { Toolbar } from "primereact/toolbar";
 import { Avatar } from "primereact/avatar";
 import Link from "next/link";
+import { type } from "os";
 
-export default function Navbar() {
+enum NavigationType {
+    default,
+    project,
+    exp
+  }
+  
+interface NavbarProps {
+    navigationType: NavigationType;
+  }
+
+export default function Navbar({ navigationType }: NavbarProps) {
   const router = useRouter();
 
   useEffect(() => {
@@ -43,12 +54,36 @@ export default function Navbar() {
         gap: "1rem",
       }}
     >
-      <div className={styles.cardimg}>
-        <Link href="/projects">Projects</Link>
+        {navigationType=== NavigationType.default && 
+            <>
+                <div className={styles.cardimg}>
+        <Link href="/projects"><p>/Projects</p></Link>
       </div>
       <div className={styles.cardimg}>
-        <Link href="/experience">Experience</Link>
+        <Link href="/exp"><p>/Exp</p></Link>
       </div>
+            </>
+        }
+        {navigationType=== NavigationType.project && 
+            <>
+                <div className={styles.cardimg} style={{color:"white"}}>
+        <Link href="/projects"><p>/Projects</p></Link>
+      </div>
+      <div className={styles.cardimg}>
+        <Link href="/exp"><p>/Exp</p></Link>
+      </div>
+            </>
+        }
+        {navigationType=== NavigationType.exp && 
+            <>
+                <div className={styles.cardimg}>
+        <Link href="/projects"><p>/Projects</p></Link>
+      </div>
+      <div className={styles.cardimg} style={{color:"white"}}>
+        <Link href="/exp"><p>/Exp</p></Link>
+      </div>
+            </>
+        }
     </div>
     </div>
   );
