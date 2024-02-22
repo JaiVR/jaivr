@@ -10,13 +10,7 @@ import Navbar from "../../../components/navbar/navbar";
 import { Slide, Hinge, Roll, JackInTheBox } from "react-awesome-reveal";
 import { Fieldset } from "primereact/fieldset";
 import { Navigation } from "swiper/modules";
-
-interface social {
-  name: string;
-  link: string;
-  img: string;
-  imgop: string;
-}
+import { Carousel } from 'primereact/carousel';
 
 enum NavigationType {
   default,
@@ -30,11 +24,13 @@ interface project {
   name: string;
   details: string;
   site: string;
+  index: string;
 }
 
 const data: project[] = [
   {
     url: "studydeck.svg",
+    index:"01",
     urlop: "studydeckop.svg",
     name: "StudyDeck",
     details:
@@ -42,17 +38,19 @@ const data: project[] = [
     site: "https://studydeck.bits-sutechteam.org/",
   },
   {
-    url: "/roomjai.svg",
+    url: "/roomjsi.svg",
     name: "RoomBooking Portal",
+    index:"02",
     urlop: "roomjaiop.svg",
     details:
       "An accessible platform enabling users to reserve rooms for academic purposes, with administrators able to approve requests seamlessly within the portal.",
     site: "https://room.studydeck.bits-sutechteam.org/",
   },
   {
-    url: "/spinxjai.svg",
+    url: "/spinx.svg",
     name: "Spinx Digital-Clone",
     urlop: "spinxop.svg",
+    index:"03",
     details: "Personal Project-Clone",
     site: "https://jaivr.github.io/spinxdigitalclone.github.io/#",
   },
@@ -60,19 +58,43 @@ const data: project[] = [
     url: "/caljai.svg",
     name: "Calendar-Todo",
     urlop: "calop.svg",
+    index:"04",
     details: "Personal Project- To Do Cal",
     site: "https://jaivr.github.io/mycalendar.github.io/",
   },
 ];
 
-function Project({ projectData }: { projectData: project }) {
-  return <div className={styles.project}>
-      <Fieldset legend={projectData.name} style={{borderRadius:"1rem", padding:"2rem"}}></Fieldset>
-  </div>;
+function Project({ projectData, width , height }: { projectData: project , width:number , height: number}) {
+
+  return (
+    <Link href={projectData.site} style={{ marginTop: "auto", marginBottom: "auto", padding: "1rem" }}>
+      <div className={styles.project}>
+        <div>
+          <h1>{projectData.name}</h1>
+        </div>
+        <div className={styles.img}>
+          <Image alt="" src={projectData.url} height={height} width={width}></Image>
+        </div>
+        <div className={styles.index}>
+          <h1>{projectData.index}</h1>
+        </div>
+      </div>
+    </Link>
+  );
 }
 
 export default function Projects() {
   const router = useRouter();
+
+  const [numVisible, setNumVisible] = React.useState(2); // Default number of visible items
+
+  const responsiveOptions = [
+    {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1
+    }
+];
 
   useEffect(() => {
     const handleKeyDown = (event: any) => {
@@ -90,31 +112,39 @@ export default function Projects() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [router]);
-
-  const [typedText, setTypedText] = useState("");
-
-  useEffect(() => {
-    const text = "Hello!";
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex <= text.length) {
-        setTypedText(text.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 150);
-  }, []);
+  const [width,setWidth]= useState<number>(225.6)
+  const [height,setHeight]= useState<number>(150)
+  React.useEffect(() => {
+    const handleResize = () => {
+      // Update numVisible based on screen width
+      if (window.innerWidth <= 500) {
+        setHeight(100);
+        setWidth(175)
+      };
+    };
+  
+    handleResize(); // Call it initially to set the appropriate value
+    window.addEventListener('resize', handleResize); // Listen for window resize events
+  
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup the event listener
+    };
+  }, [])
+  
 
   return (
     <main className={styles.main}>
-      <div>
-        <Link href="/">Back</Link>
+      <div className={styles.back} style={{position:"fixed", top:"2rem", left:"2rem"}}>
+        <Link href="/" style={{padding:"1rem"}}><Image src="/back.svg" height={32} width={32} alt="" className={styles.imgRotate}></Image></Link>
       </div>
       <div className={styles.content}>
-        {data?.map((projectData, index) => (
-          <Project key={index} projectData={projectData}></Project>
-        ))}
+      <Carousel
+          value={data}
+          numVisible={2} numScroll={2} responsiveOptions={responsiveOptions}
+          style={{padding:"1rem"}}
+          circular
+          itemTemplate={(projectData: project) => <Project projectData={projectData}  height={height} width={width}/>}
+        />
       </div>
       <Navbar navigationType={NavigationType.project} />
     </main>

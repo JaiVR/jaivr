@@ -62,7 +62,9 @@ export default function Exp() {
 
   return (
     <main className={styles.main}>
-      <Link href="/">Back</Link>
+      <div className={styles.back} style={{position:"fixed", top:"2rem", left:"2rem"}}>
+        <Link href="/" style={{padding:"1rem"}}><Image src="/back.svg" height={32} width={32} alt="" className={styles.imgRotate}></Image></Link>
+      </div>
       <div className={styles.content}>
         
       </div>
