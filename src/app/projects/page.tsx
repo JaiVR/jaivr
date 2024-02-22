@@ -67,7 +67,7 @@ const data: project[] = [
 function Project({ projectData, width , height }: { projectData: project , width:number , height: number}) {
 
   return (
-    <Link href={projectData.site} style={{ marginTop: "auto", marginBottom: "auto", padding: "1rem" }}>
+    <Link href={projectData.site} target="_blank" style={{ marginTop: "auto", marginBottom: "auto", padding: "1rem" }}>
       <div className={styles.project}>
         <div>
           <h1>{projectData.name}</h1>
@@ -75,8 +75,8 @@ function Project({ projectData, width , height }: { projectData: project , width
         <div className={styles.img}>
           <Image alt="" src={projectData.url} height={height} width={width}></Image>
         </div>
-        <div className={styles.index}>
-          <h1>{projectData.index}</h1>
+        <div className={styles.index} style={{color:"#5c5c5c"}}>
+          <h1 style={{color:"#5c5c5c"}}>{projectData.index}</h1>
         </div>
       </div>
     </Link>
@@ -130,12 +130,15 @@ export default function Projects() {
       window.removeEventListener('resize', handleResize); // Cleanup the event listener
     };
   }, [])
+  const [isHovered, setIsHovered] = useState(false);
   
 
   return (
     <main className={styles.main}>
-      <div className={styles.back} style={{position:"fixed", top:"2rem", left:"2rem"}}>
-        <Link href="/" style={{padding:"1rem"}}><Image src="/back.svg" height={32} width={32} alt="" className={styles.imgRotate}></Image></Link>
+      <div className={styles.back} style={{position:"fixed", top:"2rem", left:"2rem"}} onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}>
+        {!isHovered && <Link href="/" style={{padding:"1rem"}}><Image src="/back.svg" height={32} width={32} alt="" className={styles.imgRotate}></Image></Link>}
+        {isHovered && <Link href="/" style={{padding:"1rem"}}><Image src="/backop.svg" height={32} width={32} alt="" className={styles.imgRotate}></Image></Link>}
       </div>
       <div className={styles.content}>
       <Carousel
@@ -143,6 +146,7 @@ export default function Projects() {
           numVisible={2} numScroll={2} responsiveOptions={responsiveOptions}
           style={{padding:"1rem"}}
           circular
+          autoplayInterval={2000}
           itemTemplate={(projectData: project) => <Project projectData={projectData}  height={height} width={width}/>}
         />
       </div>

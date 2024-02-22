@@ -10,6 +10,7 @@ import Navbar from "../../components/navbar/navbar";
 import { Slide, Hinge,Roll,JackInTheBox
 } from "react-awesome-reveal";
 import { Navigation } from "swiper/modules";
+import { AttentionSeeker } from 'react-awesome-reveal';
 
 interface social {
   name: string;
@@ -122,6 +123,35 @@ export default function Home() {
   }, [router]);
 
   const [typedText, setTypedText] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, options);
+
+    if (contactRef.current) {
+        observer.observe(contactRef.current);
+    }
+
+    return () => {
+        if (contactRef.current) {
+            observer.unobserve(contactRef.current);
+        }
+    };
+}, []);
 
   useEffect(() => {
     const text = "Hello!";
@@ -161,19 +191,13 @@ export default function Home() {
         >
           <h1>Interests</h1>
           <p>
-            iam jai ,an undergrad{" "}
-            <a
-              href="https://twitter.com/bitspilaniindia"
-              target="_blank"
-              style={{ fontWeight: "500", color: "#696969", cursor: "pointer" }}
-            >
-              @bitspilaniindia
-            </a>
+          Curious and eager to explore the realms of AI/ML, embedded systems, and IoT, seeking opportunities to innovate and integrate cutting-edge technologies into practical solutions. With a keen interest in the intersection of these fields, I aim to contribute to forward-thinking projects that leverage the power of artificial intelligence, embedded systems, and IoT to address real-world challenges and drive positive change.
           </p>
         </div>
         <div
           style={{ paddingBottom: "2rem", paddingTop: "1rem" }}
           className={styles.footer}
+          ref={contactRef}
         >
           <h2 style={{paddingBottom:"1rem"}}>Contact</h2>
           <p>
@@ -182,7 +206,11 @@ export default function Home() {
               href="mailto:jaivr@protonmail.com"
               style={{ fontWeight: "500", color: "#696969", cursor: "pointer"}}
             >
-              jaivr@protonmail.com
+              {isVisible && (
+                        <AttentionSeeker effect="tada">
+                            jaivr@protonmail.com
+                        </AttentionSeeker>
+                    )}
             </a>
           </p>
           <div className={styles.socials}>

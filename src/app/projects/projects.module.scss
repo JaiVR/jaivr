@@ -20,7 +20,7 @@ div.content {
     transition: transform 0.5s ease;
   }
   .imgRotate:hover{
-    transform: rotate(360deg);
+    transform: translateY(-4px);
   }
 div.project{
     border: 1px solid #292929;
