@@ -7,9 +7,6 @@ import { useRouter } from "next/navigation";
 import "@fontsource/poppins";
 import Link from "next/link";
 import Navbar from "../../../components/navbar/navbar";
-import { Slide, Hinge, Roll, JackInTheBox } from "react-awesome-reveal";
-import { Fieldset } from "primereact/fieldset";
-import { Navigation } from "swiper/modules";
 import { Carousel } from 'primereact/carousel';
 
 enum NavigationType {
@@ -149,7 +146,7 @@ export default function Projects() {
           autoplayInterval={2000}
           itemTemplate={(projectData: project) => <Project projectData={projectData}  height={height} width={width}/>}
         />
-        <div style={{display:"flex", justifyContent:"center"}}>More on<a href="https://github.com/JaiVR" style={{color:"#8c8c8c"}}> @github</a></div>
+        <div style={{display:"flex", justifyContent:"center"}}>More on<a href="https://github.com/JaiVR" target="_blank" style={{color:"#8c8c8c", marginTop:"auto", marginBottom:"auto"}}> @github</a></div>
       </div>
       <Navbar navigationType={NavigationType.project} />
     </main>

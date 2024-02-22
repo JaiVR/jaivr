@@ -79,7 +79,7 @@ function Socials({ social }: { social: social }) {
         />
         {isHovered && (
           <JackInTheBox
-          className={styles.fadeText}>
+          className={styles.fadeText} style={{color:"#ffffff"}}>
             {social.name}
           </JackInTheBox>
         )}
