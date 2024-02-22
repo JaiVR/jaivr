@@ -44,7 +44,7 @@ export default function Navbar({ navigationType }: NavbarProps) {
     <div className={styles.card} style={{display:"flex", gap:"5rem"}}>
           <div style={{display:"flex", gap:"1rem"}}>
             <Image src="jai.svg" height={48} width={48} alt="" style={{borderRadius:"50%"}}></Image>
-            <h1>Jai</h1>
+            <h1 style={{color:"#ffffff"}}>Jai</h1>
           </div>
     <div
       style={{

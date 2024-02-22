@@ -48,7 +48,7 @@ function Experience({ exp }: { exp: exp }) {
   return (
     <div className={styles.expCard}>
       <div className={styles.expmainmain}>
-        <h2>{exp.role}</h2>
+        <h2 style={{color:"#ffffff"}}>{exp.role}</h2>
         <div className={styles.expOrg}>
         <Image src={exp.dp} height={32} width={32} alt=""></Image>
           <h3 style={{color:"#9c9c9c"}}>{exp.organization}</h3>

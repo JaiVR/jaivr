@@ -70,7 +70,7 @@ function Project({ projectData, width , height }: { projectData: project , width
     <Link href={projectData.site} target="_blank" style={{ marginTop: "auto", marginBottom: "auto", padding: "1rem" }}>
       <div className={styles.project}>
         <div>
-          <h1>{projectData.name}</h1>
+          <h1 style={{color:"#ffffff"}}>{projectData.name}</h1>
         </div>
         <div className={styles.img}>
           <Image alt="" src={projectData.url} height={height} width={width}></Image>
@@ -149,6 +149,7 @@ export default function Projects() {
           autoplayInterval={2000}
           itemTemplate={(projectData: project) => <Project projectData={projectData}  height={height} width={width}/>}
         />
+        <div style={{display:"flex", justifyContent:"center"}}>More on<a href="https://github.com/JaiVR" style={{color:"#8c8c8c"}}> @github</a></div>
       </div>
       <Navbar navigationType={NavigationType.project} />
     </main>

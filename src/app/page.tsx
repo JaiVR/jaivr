@@ -93,7 +93,7 @@ function Socials({ social }: { social: social }) {
           alt={social.name}
         />
           <JackInTheBox
-          className={styles.fadeText}>
+          className={styles.fadeText} style={{color:"#ffffff"}}>
             {social.name}
           </JackInTheBox>
       </Link>}
@@ -173,8 +173,8 @@ export default function Home() {
           style={{ borderBottom: "1px solid #393939", paddingBottom: "2rem" }}
           className={styles.heading}
         >
-          <h1>{typedText}</h1>
-          <p>
+          <h1 style={{color:"#ffffff"}}>{typedText}</h1>
+          <p style={{color:"#ffffff"}}>
             iam jai , undergrad{" "}
             <a
               href="https://twitter.com/bitspilaniindia"
@@ -189,8 +189,8 @@ export default function Home() {
           style={{ borderBottom: "1px solid #393939",paddingTop: "1rem", paddingBottom: "2rem" }}
           className={styles.heading}
         >
-          <h1>Interests</h1>
-          <p>
+          <h1 style={{color:"#ffffff"}}>Interests</h1>
+          <p style={{color:"#ffffff"}}>
           Curious and eager to explore the realms of AI/ML, embedded systems, and IoT, seeking opportunities to innovate and integrate cutting-edge technologies into practical solutions. With a keen interest in the intersection of these fields, I aim to contribute to forward-thinking projects that leverage the power of artificial intelligence, embedded systems, and IoT to address real-world challenges and drive positive change.
           </p>
         </div>
@@ -199,8 +199,8 @@ export default function Home() {
           className={styles.footer}
           ref={contactRef}
         >
-          <h2 style={{paddingBottom:"1rem"}}>Contact</h2>
-          <p>
+          <h2 style={{paddingBottom:"1rem",color:"#ffffff"}}>Contact</h2>
+          <p style={{color:"#ffffff"}}>
             email me{" "}
             <a
               href="mailto:jaivr@protonmail.com"
