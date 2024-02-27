@@ -203,7 +203,7 @@ export default function Home() {
           <p style={{color:"#ffffff"}}>
             email me{" "}
             <a
-              href="mailto:jaivr@protonmail.com"
+              href="mailto:jai5414@outlook.com"
               style={{ fontWeight: "500", color: "#696969", cursor: "pointer"}}
             >
               {isVisible && (

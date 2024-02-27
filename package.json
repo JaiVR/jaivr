@@ -20,7 +20,8 @@
     "react-awesome-reveal": "^4.2.8",
     "react-dom": "^18",
     "sass": "^1.71.0",
-    "swiper": "^11.0.6"
+    "swiper": "^11.0.6",
+    "vercel": "^33.5.2"
   },
   "devDependencies": {
     "@types/node": "^20",
