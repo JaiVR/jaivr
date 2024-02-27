@@ -208,7 +208,7 @@ export default function Home() {
             >
               {isVisible && (
                         <AttentionSeeker effect="tada">
-                            jaivr@protonmail.com
+                            jai5414@outlook.com
                         </AttentionSeeker>
                     )}
             </a>
