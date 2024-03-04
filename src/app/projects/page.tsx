@@ -140,10 +140,10 @@ export default function Projects() {
       <div className={styles.content}>
       <Carousel
           value={data}
-          numVisible={2} numScroll={2} responsiveOptions={responsiveOptions}
+          numVisible={2} numScroll={1} responsiveOptions={responsiveOptions}
           style={{padding:"1rem"}}
           circular
-          autoplayInterval={2000}
+          autoplayInterval={3000}
           itemTemplate={(projectData: project) => <Project projectData={projectData}  height={height} width={width}/>}
         />
         <div style={{display:"flex", justifyContent:"center"}}>More on<a href="https://github.com/JaiVR" target="_blank" style={{color:"#8c8c8c", marginTop:"auto", marginBottom:"auto"}}> @github</a></div>

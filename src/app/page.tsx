@@ -189,9 +189,12 @@ export default function Home() {
           style={{ borderBottom: "1px solid #393939",paddingTop: "1rem", paddingBottom: "2rem" }}
           className={styles.heading}
         >
-          <h1 style={{color:"#ffffff"}}>Interests</h1>
+          <h1 style={{color:"#ffffff"}}>Topics of Interest</h1>
           <p style={{color:"#ffffff"}}>
-          Curious and eager to explore the realms of AI/ML, embedded systems, and IoT, seeking opportunities to innovate and integrate cutting-edge technologies into practical solutions. With a keen interest in the intersection of these fields, I aim to contribute to forward-thinking projects that leverage the power of artificial intelligence, embedded systems, and IoT to address real-world challenges and drive positive change.
+              🚀 Dev - Machine Learning
+          </p>
+          <p style={{color:"#ffffff"}}>
+            💡Core- Embedded Systems , IoT and application of AI/ML in Embedded Systems and IoT
           </p>
         </div>
         <div
