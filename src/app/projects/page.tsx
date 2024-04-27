@@ -13,6 +13,7 @@ enum NavigationType {
   default,
   project,
   exp,
+  blogs
 }
 
 interface project {

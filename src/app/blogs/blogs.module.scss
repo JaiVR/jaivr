@@ -1,0 +1,82 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+    font-family: "Poppins";
+    background-color: #272727;
+}
+div.content {
+    background-color: #1e1e1e;
+    margin-bottom: auto;
+    width: 60vw;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px #292929;
+    p{
+      display: flex;
+      justify-content: center;
+    }
+
+    .tab {
+      cursor: pointer;
+      color: #727272;
+    }
+    
+    .active {
+      border-bottom: 1px solid white;
+      color: white;
+    }
+    div.blogCont{
+      color: #c5c5c5;
+    }
+    div.truncatedContent{
+      p{
+        background: linear-gradient(to top, transparent, #c5c5c5);
+        background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+      }
+    }
+    div.project:hover{
+      text-decoration: underline;
+      text-decoration-color: #808080;
+    }
+  }
+  @media screen and (max-width:768px) {
+    div.content{
+      width: 90vw;
+    }
+    div.data{
+        h2{
+            font-size: 1.2rem;
+        }
+    }
+    div.blogCont{
+      font-size: 0.80rem;
+    }
+    div.tab{
+      h3{
+        font-size: 1.2rem;
+      }
+    }
+}
+@media screen and (max-width:320px) {
+    div.data{
+        h2{
+          font-size: 0.72rem;
+        }
+    }
+    div.blogCont{
+      font-size: 0.64rem;
+    }
+    div.tab{
+      h3{
+        font-size: 0.72rem;
+      }
+    }
+}
+  

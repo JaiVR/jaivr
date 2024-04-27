@@ -175,7 +175,7 @@ export default function Home() {
         >
           <h1 style={{color:"#ffffff"}}>{typedText}</h1>
           <p style={{color:"#ffffff"}}>
-            iam jai , undergrad{" "}
+            i am jai , undergrad{" "}
             <a
               href="https://twitter.com/bitspilaniindia"
               target="_blank"
@@ -191,7 +191,7 @@ export default function Home() {
         >
           <h1 style={{color:"#ffffff"}}>Topics of Interest</h1>
           <p style={{color:"#ffffff"}}>
-              🚀 Dev - Machine Learning
+              🚀 Dev - Machine Learning, Deep Learning
           </p>
           <p style={{color:"#ffffff"}}>
             💡Core- Embedded Systems , IoT and application of AI/ML in Embedded Systems and IoT
@@ -209,11 +209,7 @@ export default function Home() {
               href="mailto:jai5414@outlook.com"
               style={{ fontWeight: "500", color: "#696969", cursor: "pointer"}}
             >
-              {isVisible && (
-                        <AttentionSeeker effect="tada">
-                            jai5414@outlook.com
-                        </AttentionSeeker>
-                    )}
+              jai5414@outlook.com
             </a>
           </p>
           <div className={styles.socials}>

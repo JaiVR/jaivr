@@ -12,6 +12,7 @@ enum NavigationType {
   default,
   project,
   exp,
+  blogs
 }
 interface exp {
   role: string;

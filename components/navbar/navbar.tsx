@@ -13,7 +13,8 @@ import { type } from "os";
 enum NavigationType {
     default,
     project,
-    exp
+    exp,
+    blogs
   }
   
 interface NavbarProps {
@@ -62,6 +63,10 @@ export default function Navbar({ navigationType }: NavbarProps) {
       <div className={styles.cardimg}>
         <Link href="/exp"><p>/Exp</p></Link>
       </div>
+      <div className={styles.cardimg}>
+        <Link href="/blogs"><p>/Blog</p></Link>
+      </div>
+      
             </>
         }
         {navigationType=== NavigationType.project && 
@@ -72,6 +77,9 @@ export default function Navbar({ navigationType }: NavbarProps) {
       <div className={styles.cardimg}>
         <Link href="/exp"><p>/Exp</p></Link>
       </div>
+      <div className={styles.cardimg}>
+        <Link href="/blogs"><p>/Blog</p></Link>
+      </div>
             </>
         }
         {navigationType=== NavigationType.exp && 
@@ -81,6 +89,22 @@ export default function Navbar({ navigationType }: NavbarProps) {
       </div>
       <div className={styles.cardimg} style={{color:"white"}}>
         <Link href="/exp"><p>/Exp</p></Link>
+      </div>
+      <div className={styles.cardimg}>
+        <Link href="/blogs"><p>/Blog</p></Link>
+      </div>
+            </>
+        }
+        {navigationType=== NavigationType.blogs && 
+            <>
+                <div className={styles.cardimg}>
+        <Link href="/projects"><p>/Projects</p></Link>
+      </div>
+      <div className={styles.cardimg}>
+        <Link href="/exp"><p>/Exp</p></Link>
+      </div>
+      <div className={styles.cardimg} style={{color:"white"}}>
+        <Link href="/blogs"><p>/Blog</p></Link>
       </div>
             </>
         }
