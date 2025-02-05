@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 6rem;
+    padding: 2rem;
     min-height: 100vh;
     font-family: "Poppins";
     background-color: #272727;
@@ -15,6 +15,15 @@ div.content {
     padding: 3rem;
     border-radius: 1rem;
     box-shadow: 0px 0px 10px #292929;
+    .tab {
+      cursor: pointer;
+      color: #727272;
+    }
+    
+    .active {
+      border-bottom: 1px solid white;
+      color: white;
+    }
   }
   .imgRotate{
     transition: transform 0.5s ease;
@@ -52,6 +61,36 @@ div.project{
         }
     }
 }
+div.projectML{
+  border: 1px solid #292929;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 1rem;
+  height: 64vh;
+  div.index{
+      position: absolute;
+      bottom: 5vh;
+      color: #5c5c5c;
+  }
+  div.img{
+      position: absolute;
+      bottom: 15vh;
+      display: flex;
+      justify-content: center;
+      animation: floating 2s ease-in-out infinite;
+  }
+  @keyframes floating {
+      0% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-8px);
+      }
+      100% {
+          transform: translateY(0);
+      }
+  }
+}
   
   @media screen and (max-width: 768px) {
     div.content{
@@ -71,5 +110,35 @@ div.project{
     div.project{
         height: 300px;
     }
+    div.projectML{
+      height: 400px;
+      h1{
+        font-size: 0.9rem;
+      }
   }
+    
+    div.tab{
+      margin-left: auto;
+      margin-right: auto;
+      h3{
+        font-size: 1.2rem;
+      }
+    }
+    div.goTO{
+      font-size: 0.64rem;
+    }
+    div.pointers{
+      font-size: 0.64rem;
+    }
+  }
+  @media screen and (max-width:320px) {
+    div.tab{
+      h3{
+        font-size: 0.72rem;
+      }
+    }
+    div.pointers{
+      font-size: 0.64rem;
+    }
+}
   

@@ -42,11 +42,11 @@ export default function Navbar({ navigationType }: NavbarProps) {
   }, [router]);
 
   return (
-    <div className={styles.card} style={{display:"flex", gap:"5rem"}}>
-          <div style={{display:"flex", gap:"1rem"}}>
+    <div className={styles.card} style={{display:"flex", gap:"5rem",marginTop: "auto",marginBottom: "auto"}}>
+          <Link  href="/" style={{display:"flex", gap:"1rem"}}>
             <Image src="jai.svg" height={48} width={48} alt="" style={{borderRadius:"50%"}}></Image>
             <h1 style={{color:"#ffffff"}}>Jai</h1>
-          </div>
+          </Link>
     <div
       style={{
         marginTop: "auto",

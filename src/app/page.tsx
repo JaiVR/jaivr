@@ -174,6 +174,7 @@ export default function Home() {
           className={styles.heading}
         >
           <h1 style={{color:"#ffffff"}}>{typedText}</h1>
+          {/* <h3>Who I am</h3> */}
           <p style={{color:"#ffffff"}}>
             i am jai , undergrad{" "}
             <a
@@ -182,10 +183,11 @@ export default function Home() {
               style={{ fontWeight: "500", color: "#696969", cursor: "pointer" }}
             >
               @bitspilaniindia
-            </a>
+            </a> <br></br>
+            developer, currenty learning ai/ml, previously a frontend developer, when iam free i try to read books else watch and play F1!
           </p>
         </div>
-        <div
+        {/* <div
           style={{ borderBottom: "1px solid #393939",paddingTop: "1rem", paddingBottom: "2rem" }}
           className={styles.heading}
         >
@@ -196,7 +198,7 @@ export default function Home() {
           <p style={{color:"#ffffff"}}>
             💡Core- Embedded Systems , IoT and application of AI/ML in Embedded Systems and IoT
           </p>
-        </div>
+        </div> */}
         <div
           style={{ paddingBottom: "2rem", paddingTop: "1rem" }}
           className={styles.footer}

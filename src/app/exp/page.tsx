@@ -23,6 +23,13 @@ interface exp {
 }
 const exp: exp[] = [
   {
+    role: "Research Intern",
+    organization: "CEERI, Chennai",
+    imgs: ["python.svg"],
+    dp: "ceeri.svg",
+    details:"Chemometrics on NIR Spectra"
+  },
+  {
     role: "Frontend Developer",
     organization: "SU Tech Team",
     imgs: ["nexticon.svg", "react.svg", "typescript.svg", "scss.svg"],
